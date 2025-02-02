@@ -18,6 +18,13 @@ Player::Player () :
     inventory() 
 {}
 
+void Player::Header () {
+    cout << "Winnings: " << std::fixed << winnings << "$    ";
+    cout << "Luck: " << std::fixed << luck << "    ";
+    cout << ( (!event_flags) ? "Big Chungus" : PrintEvent() ) << endl;
+    cout << endl;
+}
+
 float Player::DoRoll () {
     action_taken = true;
 
@@ -53,7 +60,7 @@ bool Player::SellCase (const Case& _case) {
 void Player::OpenCase (const Case& _case) {
     ClearScreen();
 
-    float roll = DoRoll();;
+    float roll = DoRoll();
     ShowRoll(roll);
 
     cout << "ROLL: " << roll << "\t|\tCASE: " << _case.threshold << endl;
@@ -182,6 +189,8 @@ void Player::BuyCase () {
 
     while (1) {
         ClearScreen();
+
+        Header();
 
         int i = 0;
         for (Case c : cd.cases) {

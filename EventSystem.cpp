@@ -110,6 +110,7 @@ void EventSystem::RollForYourLife (bool exit) {
                 cout << "\nYou gave up 30$ for him to leave you." << endl;
                 WaitMs(500);
                 cout << "New Balance: " << player->winnings << "$" << endl;
+                WaitMs(500);
             } else {
                 ClearScreen();
                 cout << "Not enough money (" << player->winnings << "$)" << endl;
@@ -146,5 +147,8 @@ void EventSystem::RollForYourLife (bool exit) {
                 cout << ":(  <-  you" << endl;
             }
         }
+
+        WaitInp("press enter..");
+        return;
     }
 }

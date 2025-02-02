@@ -55,13 +55,14 @@ void ShowRollLinear (float roll) {
 }
 
 void ShowRoll (float roll) {
-    for (int i = 0; i < 60; ++i) {
+    for (int i = 0; i < 50; ++i) {
         ClearScreen();
         printf("0.%d%d", i%10, i%7);
         WaitMs(15);
     }
 
     ClearScreen();
+
     if (roll == 1.0) {
         printf("`*.'!!! [ %.2f ] !!!'.*`", roll);
         WaitMs(1000);
@@ -76,6 +77,7 @@ void ShowRoll (float roll) {
     ClearScreen();
 }
 
+// Move (i) -> (x) by at most (m) and return value
 float Crawl (float i, const float x, const float m) {
     if (x == i) return i;
 

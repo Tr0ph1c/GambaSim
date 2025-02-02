@@ -22,6 +22,7 @@ class Player {
     
     Player ();
 
+    void Header();
     float DoRoll ();
     bool SellCase (const Case& _case);
     void OpenCase (const Case& _case);

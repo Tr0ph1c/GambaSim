@@ -29,13 +29,6 @@ void RageConfirm () {
     }
 }
 
-void inline Header () {
-    cout << "Winnings: " << std::fixed << player.winnings << "$    ";
-    cout << "Luck: " << std::fixed << player.luck << "    ";
-    cout << ( (!player.event_flags) ? "Big Chungus" : player.PrintEvent() ) << endl;
-    cout << endl;
-}
-
 void inline Menu () {
     cout << "Welcome to Gamba, what do you want to do?" << endl;
     cout << "1) Get Case" << endl;
@@ -83,7 +76,7 @@ void MainMenu () {
     while (1) {
         ClearScreen();
         cout << std::setprecision(2);
-        Header();
+        player.Header();
         Menu();
         
         char choice = GetChar();
